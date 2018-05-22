@@ -1,6 +1,6 @@
 {% set name = "pytoml" %}
-{% set version = "0.1.11" %}
-{% set sha256 = "a9aa2e60b254b9e33c8e44562465516cb4db3ae78e68502e881ac6e0ea6a0cb6" %}
+{% set version = "0.1.15" %}
+{% set sha256 = "de7e42a852dcf4c8b757b59898dee06ecca80ddaf607b3b2011cc9279f8edf99" %}
 
 package:
   name: {{ name|lower }}
@@ -13,13 +13,14 @@ source:
 
 build:
   number: 0
+  noarch: python
   script:
-    - python setup.py install --single-version-externally-managed --record files.txt
+    - python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
   run:
     - python
 
@@ -30,6 +31,7 @@ test:
 about:
   home: http://github.com/avakar/pytoml
   license: MIT
+  license_file: LICENSE
   summary: 'A TOML-0.4.0 parser/writer for Python.'
 
 extra:
