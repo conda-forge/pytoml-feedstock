@@ -13,13 +13,14 @@ source:
 
 build:
   number: 0
+  noarch: python
   script:
-    - python setup.py install --single-version-externally-managed --record files.txt
+    - python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
   run:
     - python
 
@@ -30,6 +31,7 @@ test:
 about:
   home: http://github.com/avakar/pytoml
   license: MIT
+  license_file: LICENSE
   summary: 'A TOML-0.4.0 parser/writer for Python.'
 
 extra:
