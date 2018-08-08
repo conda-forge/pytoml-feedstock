@@ -1,7 +1,7 @@
 About pytoml
 ============
 
-Home: http://github.com/avakar/pytoml
+Home: https://github.com/avakar/pytoml
 
 Package license: MIT
 
