@@ -1,21 +1,20 @@
 {% set name = "pytoml" %}
-{% set version = "0.1.15" %}
-{% set sha256 = "de7e42a852dcf4c8b757b59898dee06ecca80ddaf607b3b2011cc9279f8edf99" %}
+{% set version = "0.1.18" %}
+{% set sha256 = "dae3c4e31d09eb06a6076d671f2281ee5d2c43cbeae16599c3af20881bb818ac" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.zip
-  url: https://pypi.org/packages/source/p/{{ name }}/{{ name }}-{{ version }}.zip
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/p/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 0
   noarch: python
-  script:
-    - python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
   build:
@@ -27,9 +26,11 @@ requirements:
 test:
   imports:
     - pytoml
+    - pytoml.parser
+    - pytoml.writer
 
 about:
-  home: http://github.com/avakar/pytoml
+  home: https://github.com/avakar/pytoml
   license: MIT
   license_file: LICENSE
   summary: 'A TOML-0.4.0 parser/writer for Python.'
