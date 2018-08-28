@@ -1,23 +1,20 @@
-{% set name = "pytoml" %}
 {% set version = "0.1.18" %}
-{% set sha256 = "dae3c4e31d09eb06a6076d671f2281ee5d2c43cbeae16599c3af20881bb818ac" %}
 
 package:
-  name: {{ name|lower }}
+  name: pytoml
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.org/packages/source/p/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.org/packages/source/p/pytoml/pytoml-{{ version }}.tar.gz
+  sha256: dae3c4e31d09eb06a6076d671f2281ee5d2c43cbeae16599c3af20881bb818ac
 
 build:
+  number: 1
   noarch: python
-  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
