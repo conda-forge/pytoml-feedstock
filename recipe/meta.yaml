@@ -1,4 +1,4 @@
-{% set version = "0.1.18" %}
+{% set version = "0.1.19" %}
 
 package:
   name: pytoml
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pytoml/pytoml-{{ version }}.tar.gz
-  sha256: dae3c4e31d09eb06a6076d671f2281ee5d2c43cbeae16599c3af20881bb818ac
+  sha256: 42f76a696182570e93581e763da033c1de484973bad82458387b6dee6c184cbc
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
