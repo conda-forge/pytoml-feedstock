@@ -1,4 +1,4 @@
-{% set version = "0.1.19" %}
+{% set version = "0.1.20" %}
 
 package:
   name: pytoml
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pytoml/pytoml-{{ version }}.tar.gz
-  sha256: 42f76a696182570e93581e763da033c1de484973bad82458387b6dee6c184cbc
+  sha256: ca2d0cb127c938b8b76a9a0d0f855cf930c1d50cc3a0af6d3595b566519a1013
 
 build:
   number: 0
